@@ -1,4 +1,4 @@
-#About SuperheroApp
+# SuperheroApp
 
 This is a web application which manages my kids favorite superheroes and which was built for training purposes only.
 
