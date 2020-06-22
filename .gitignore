@@ -179,6 +179,7 @@ ClientBin/
 *.publishsettings
 orleans.codegen.cs
 *db
+appsettings.json
 
 /node_modules
 
