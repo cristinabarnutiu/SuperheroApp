@@ -1,7 +1,7 @@
-# SuperheroApp
+#About SuperheroApp
 
-A web application which manages my kids favorite superheroes.
+This is a web application which manages my kids favorite superheroes and which was built for training purposes only.
 
-The application framework uses Angular, Bootstrap and ASP.NET Core and a SQLite database.
+The framework uses Angular, Bootstrap and Web API ASP.NET Core. The database layer uses SQLite.
 
-This app was built for training purposes only and is based on Neil Cummings' tutorial from Udemy: https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/
+Although it has some personal inputs, the app is mostly based on Neil Cummings' tutorial from Udemy: https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/
