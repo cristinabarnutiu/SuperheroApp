@@ -12,6 +12,7 @@
     <UserSecretsId>9efb3fbe-8c76-4897-8469-1ebb22db2ed4</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AngularJS.Core" Version="1.8.0" />
     <PackageReference Include="bootstrap" Version="4.5.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.5" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.5" />
