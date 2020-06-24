@@ -25,6 +25,7 @@ namespace SuperheroApp.Controllers
         }
 
         // GET: api/Values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Value>>> GetValues()
         {
@@ -33,7 +34,7 @@ namespace SuperheroApp.Controllers
 
         
         //[AllowAnonymous] means that it requires no authorisation
-        [AllowAnonymous]
+        [AllowAnonymous]     
         // GET: api/Values/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Value>> GetValue(int id)

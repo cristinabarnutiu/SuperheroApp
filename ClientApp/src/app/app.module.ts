@@ -10,7 +10,7 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { ValueComponent } from './value/value.component';
+//import { ValueComponent } from './value/value.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 
@@ -22,7 +22,7 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ValueComponent,
+    //ValueComponent,
     RegisterComponent,
   ],
   imports: [
@@ -33,7 +33,7 @@ import { RegisterComponent } from './register/register.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
-      { path: 'value', component: ValueComponent },
+      //{ path: 'value', component: ValueComponent },
       { path: 'register', component: RegisterComponent },
     ])
   ],
