@@ -13,6 +13,7 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 //import { ValueComponent } from './value/value.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor_old';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RegisterComponent } from './register/register.component';
     ])
   ],
   providers: [
-    AuthService
+    AuthService,
+    ErrorInterceptorProvider,
   ],
   bootstrap: [AppComponent]
 })

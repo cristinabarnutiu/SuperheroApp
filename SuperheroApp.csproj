@@ -10,6 +10,7 @@
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <UserSecretsId>9efb3fbe-8c76-4897-8469-1ebb22db2ed4</UserSecretsId>
+	<TypeScriptExperimentalDecorators>true</TypeScriptExperimentalDecorators>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AngularJS.Core" Version="1.8.0" />
@@ -29,6 +30,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.IdentityModel.Logging" Version="6.6.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.6.0" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.9.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.6.0" />
   </ItemGroup>
@@ -39,7 +44,12 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ClientApp\src\app\_services\" />
+    <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
+    <None Remove="ClientApp\src\app\_services\error.interceptor_old.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\_services\error.interceptor_old.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_services\error.interceptor.ts" />
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
