@@ -4,7 +4,8 @@ This is a web application which manages my kids favorite superheroes. It is inte
 
 SuperheroApp is a single-page application built with:
 - ASP.NET Core WebAPI (v3.1) and C# for cross-platform server-side code
-- Angular (v8), TypeScript and Alertify JS (v1.13) for client-side code
+- Angular (v8) and TypeScript for client-side code
+- 3rd party client-side code libraries: Alertify JS (v1.13) and Ngx Bootstrap (v5.6) 
 - Bootstrap (v4.5) and Font Awesome (v6) for UI layout and styling
 - SQLite as the database layer
 
