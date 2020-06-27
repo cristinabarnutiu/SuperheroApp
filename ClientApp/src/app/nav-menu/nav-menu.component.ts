@@ -11,29 +11,26 @@ export class NavMenuComponent implements OnInit{
   //this will store out username and password
   model: any = {};
 
-  constructor(private authService: AuthService, private alertify: AlertifyService) { }
+  constructor(public authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit() {
   }
 
   login() {
-    this.authService.login(this.model).subscribe(next => { this.alertify.success('logged in successfully'); },
+    this.authService.login(this.model).subscribe(next => { this.alertify.success('Logged in successfully'); },
       error => { this.alertify.error(error); }
     );
   }
 
   //a method to determine whether the user is logged in
   loggedIn() {
-    const token = localStorage.getItem('token');
-    //if there is something in this token, return true
-    return !!token;
+    return this.authService.loggedIn();
   }
 
   logout() {
     localStorage.removeItem('token');
-    this.alertify.message('logged out');
+    this.alertify.message('You have successfully logged out');
   }
-
 
   //from the framework
   isexpanded = false;

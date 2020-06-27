@@ -36,7 +36,7 @@ namespace SuperheroApp.Controllers
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
             //check if user exists
             if (await _repo.UserExists(userForRegisterDto.Username))
-                return BadRequest("Username already exists. Please chose a different username!");
+                return BadRequest("This username already exists. Please chose a different username!");
 
             var userToCreate = new User
             {

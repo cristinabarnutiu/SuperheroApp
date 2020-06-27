@@ -2,8 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-//import { HttpClientModule} from '@angular/common/http';
 import { RouterModule } from '@angular/router'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// RECOMMENDED
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
@@ -14,7 +17,6 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
-
 
 @NgModule({
   declarations: [
@@ -30,14 +32,20 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       //{ path: 'value', component: ValueComponent },
       { path: 'register', component: RegisterComponent },
-    ])
+    ]),
+
   ],
+
   providers: [
     AuthService,
     ErrorInterceptorProvider,
