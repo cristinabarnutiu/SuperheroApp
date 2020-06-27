@@ -7,7 +7,7 @@ SuperheroApp is a single-page application built with:
 - Angular (v8) and TypeScript (v3.9) for client-side code
 - 3rd party client-side code libraries: Alertify JS (v1.13) and Ngx Bootstrap (v5.6) 
 - Bootstrap (v4.5) and Font Awesome (v6) for UI layout and styling
-- Bootswatch theme: SpaceLab
+- Bootswatch (4.5) theme 'SpaceLab'
 - SQLite as the database layer
 
 The app contains my personal inputs but is also based on Neil Cummings' tutorial from Udemy: https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/
