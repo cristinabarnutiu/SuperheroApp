@@ -17,6 +17,10 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { SuperheroListComponent } from './superhero-list/superhero-list.component';
+import { ListsComponent } from './lists/lists.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AuthGuard } from './_guards/auth.guard';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,9 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
     FetchDataComponent,
     //ValueComponent,
     RegisterComponent,
+    SuperheroListComponent,
+    ListsComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -38,8 +45,25 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'home', component: HomeComponent },
+
+      {
+        path: '',
+        runGuardsAndResolvers: 'always',
+        canActivate: [AuthGuard],
+        children: [
+          { path: 'superhero-list', component: SuperheroListComponent},
+          { path: 'messages', component: MessagesComponent },
+          { path: 'lists', component: ListsComponent },]
+      },
+
+
+      //in case the route is not found, then user will be redirected to home
+      { path: '**', redirectTo: '', pathMatch: 'full'},
+
+      //{ path: 'counter', component: CounterComponent },
+      //{ path: 'fetch-data', component: FetchDataComponent },
+
       //{ path: 'value', component: ValueComponent },
       { path: 'register', component: RegisterComponent },
     ]),

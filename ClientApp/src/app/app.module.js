@@ -24,6 +24,10 @@ var fetch_data_component_1 = require("./fetch-data/fetch-data.component");
 var auth_service_1 = require("./_services/auth.service");
 var register_component_1 = require("./register/register.component");
 var error_interceptor_1 = require("./_services/error.interceptor");
+var superhero_list_component_1 = require("./superhero-list/superhero-list.component");
+var lists_component_1 = require("./lists/lists.component");
+var messages_component_1 = require("./messages/messages.component");
+var auth_guard_1 = require("./_guards/auth.guard");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -37,6 +41,9 @@ var AppModule = /** @class */ (function () {
                 fetch_data_component_1.FetchDataComponent,
                 //ValueComponent,
                 register_component_1.RegisterComponent,
+                superhero_list_component_1.SuperheroListComponent,
+                lists_component_1.ListsComponent,
+                messages_component_1.MessagesComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -46,8 +53,21 @@ var AppModule = /** @class */ (function () {
                 dropdown_1.BsDropdownModule.forRoot(),
                 router_1.RouterModule.forRoot([
                     { path: '', component: home_component_1.HomeComponent, pathMatch: 'full' },
-                    { path: 'counter', component: counter_component_1.CounterComponent },
-                    { path: 'fetch-data', component: fetch_data_component_1.FetchDataComponent },
+                    { path: 'home', component: home_component_1.HomeComponent },
+                    {
+                        path: '',
+                        runGuardsAndResolvers: 'always',
+                        canActivate: [auth_guard_1.AuthGuard],
+                        children: [
+                            { path: 'superhero-list', component: superhero_list_component_1.SuperheroListComponent },
+                            { path: 'messages', component: messages_component_1.MessagesComponent },
+                            { path: 'lists', component: lists_component_1.ListsComponent },
+                        ]
+                    },
+                    //in case the route is not found, then user will be redirected to home
+                    { path: '**', redirectTo: '', pathMatch: 'full' },
+                    //{ path: 'counter', component: CounterComponent },
+                    //{ path: 'fetch-data', component: FetchDataComponent },
                     //{ path: 'value', component: ValueComponent },
                     { path: 'register', component: register_component_1.RegisterComponent },
                 ]),
