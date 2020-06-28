@@ -44,6 +44,16 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20200628202357_ExtendedReviewClass.cs" />
+    <Compile Remove="Migrations\20200628202357_ExtendedReviewClass.Designer.cs" />
+    <Compile Remove="Migrations\20200628202724_ExtendedReviewClass2.cs" />
+    <Compile Remove="Migrations\20200628202724_ExtendedReviewClass2.Designer.cs" />
+    <Compile Remove="Migrations\20200628202850_ExtendedReviewClass3.cs" />
+    <Compile Remove="Migrations\20200628202850_ExtendedReviewClass3.Designer.cs" />
+    <Compile Remove="Migrations\20200628203311_NewSchema.cs" />
+    <Compile Remove="Migrations\20200628203311_NewSchema.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <None Remove="ClientApp\src\app\routes.ts" />
     <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
     <None Remove="ClientApp\src\typing.d.ts" />

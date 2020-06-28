@@ -13,14 +13,13 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
-//import { ValueComponent } from './value/value.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { SuperheroListComponent } from './superhero-list/superhero-list.component';
 import { ListsComponent } from './lists/lists.component';
-import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -29,11 +28,10 @@ import { AuthGuard } from './_guards/auth.guard';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    //ValueComponent,
     RegisterComponent,
     SuperheroListComponent,
     ListsComponent,
-    MessagesComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -53,7 +51,7 @@ import { AuthGuard } from './_guards/auth.guard';
         canActivate: [AuthGuard],
         children: [
           { path: 'superhero-list', component: SuperheroListComponent},
-          { path: 'messages', component: MessagesComponent },
+          { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
       },
 

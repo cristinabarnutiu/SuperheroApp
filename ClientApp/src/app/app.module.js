@@ -20,14 +20,13 @@ var nav_menu_component_1 = require("./nav-menu/nav-menu.component");
 var home_component_1 = require("./home/home.component");
 var counter_component_1 = require("./counter/counter.component");
 var fetch_data_component_1 = require("./fetch-data/fetch-data.component");
-//import { ValueComponent } from './value/value.component';
 var auth_service_1 = require("./_services/auth.service");
 var register_component_1 = require("./register/register.component");
 var error_interceptor_1 = require("./_services/error.interceptor");
 var superhero_list_component_1 = require("./superhero-list/superhero-list.component");
 var lists_component_1 = require("./lists/lists.component");
-var messages_component_1 = require("./messages/messages.component");
 var auth_guard_1 = require("./_guards/auth.guard");
+var reviews_component_1 = require("./reviews/reviews.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -39,11 +38,10 @@ var AppModule = /** @class */ (function () {
                 home_component_1.HomeComponent,
                 counter_component_1.CounterComponent,
                 fetch_data_component_1.FetchDataComponent,
-                //ValueComponent,
                 register_component_1.RegisterComponent,
                 superhero_list_component_1.SuperheroListComponent,
                 lists_component_1.ListsComponent,
-                messages_component_1.MessagesComponent,
+                reviews_component_1.ReviewsComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -60,7 +58,7 @@ var AppModule = /** @class */ (function () {
                         canActivate: [auth_guard_1.AuthGuard],
                         children: [
                             { path: 'superhero-list', component: superhero_list_component_1.SuperheroListComponent },
-                            { path: 'messages', component: messages_component_1.MessagesComponent },
+                            { path: 'reviews', component: reviews_component_1.ReviewsComponent },
                             { path: 'lists', component: lists_component_1.ListsComponent },
                         ]
                     },
