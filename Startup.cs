@@ -99,6 +99,7 @@ namespace SuperheroApp
 
             //In 3.0 this needs to go after the 'Use Routing' and before UseAuth & UseEndpoints
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            
             //In 3.0 we need both app.UseAuthentication(); and app.UseAuthorization();
             app.UseAuthentication();
             app.UseAuthorization();

@@ -52,6 +52,8 @@
     <Compile Remove="Migrations\20200628202850_ExtendedReviewClass3.Designer.cs" />
     <Compile Remove="Migrations\20200628203311_NewSchema.cs" />
     <Compile Remove="Migrations\20200628203311_NewSchema.Designer.cs" />
+    <Compile Remove="Migrations\20200629211838_Extended.cs" />
+    <Compile Remove="Migrations\20200629211838_Extended.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\app\routes.ts" />

@@ -10,4 +10,6 @@ SuperheroApp is a single-page application built with:
 - Bootswatch (4.5) theme 'SpaceLab'
 - SQLite as the database layer
 
+Among the tools used: Visual Studio, DB Browser for SQLite, Postman, JSON Generator, Chrome dev tools
+
 The app contains my personal inputs but is also based on Neil Cummings' tutorial from Udemy: https://www.udemy.com/course/build-an-app-with-aspnet-core-and-angular-from-scratch/

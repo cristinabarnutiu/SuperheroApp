@@ -11,6 +11,6 @@ namespace SuperheroApp.Models
         public int SuperheroId { get => SuperheroId; set => SuperheroId = Superhero.Id; }
         public Superhero Superhero { get; set; }
         public User User { get; set; }
-        public int UserId { get => UserId; set => UserId = User.Id;}
+        public int UserId { get; set;}
     }
 }

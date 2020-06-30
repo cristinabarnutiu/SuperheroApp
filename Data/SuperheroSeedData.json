@@ -1,0 +1,153 @@
+[
+  {
+    "Name": "Flash",
+    "Gender": "M",
+    "Superpower": "very fast",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://m.media-amazon.com/images/I/61nrgQlZyFL._SR500,500_.jpg",
+        "isMain": true,
+        "description": "Flash"
+      }
+    ],
+    "Reviews": ""
+  },
+
+
+  {
+    "Name": "Hulk",
+    "Gender": "M",
+    "Superpower": "big and powerfull",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://img.brickowl.com/files/image_cache/larger/lego-hulk-minifigure-25.jpg",
+        "isMain": true,
+        "description": "Flash"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Catwoman",
+    "Gender": "F",
+    "Superpower": "agile professional thief with a whip",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0665/3187/products/lego-catwoman-super-heroes-sh006_1024x.jpg",
+        "isMain": true,
+        "description": "Catwoman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Batman",
+    "Gender": "M",
+    "Superpower": "genius-level intellect, martial artist, has an extraordinary arsenal of weaponry and equipment",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://img.brickowl.com/files/image_cache/larger/lego-batman-1939-minifigure-25.jpg",
+        "isMain": true,
+        "description": "Batman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Superman",
+    "Gender": "M",
+    "Superpower": "incredible strength and impervious skin, able to fly",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://m.media-amazon.com/images/I/51xW9So+d-L._AC_SS350_.jpg",
+        "isMain": true,
+        "description": "Superman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Wonder Woman",
+    "Gender": "F",
+    "Superpower": "possesses an arsenal of advanced technology, including the Lasso of Truth, indestructible bracelets and a tiara",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1123/3426/products/Wonderwoman-1941_DC_Super_Heroes_LEGO_Minifigures_Series_71026_753x.jpg",
+        "isMain": true,
+        "description": "Wonder Woman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Spiderman",
+    "Gender": "M",
+    "Superpower": "amazing spider-like abilities",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://vignette.wikia.nocookie.net/lego/images/0/0b/D-J1h29X4AI1uqV.jpg/revision/latest?cb=20190628142422",
+        "isMain": true,
+        "description": "Spiderman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Ironman",
+    "Gender": "M",
+    "Superpower": "genius for high-tech solutions to problems",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://johnlewis.scene7.com/is/image/JohnLewis/238470314alt3?",
+        "isMain": true,
+        "description": "Ironman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Black Widow",
+    "Gender": "F",
+    "Superpower": "super-spy and deadly assasin",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://img.brickowl.com/files/image_cache/larger/lego-black-widow-with-short-hair-minifigure-25.jpg",
+        "isMain": true,
+        "description": "Black Widow"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Captain America",
+    "Gender": "M",
+    "Superpower": "agility, strength, speed, endurance, and reaction time",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/0079/3336/2256/products/sh177_3d509d2d-f2d7-44f7-ac39-8136daa18a68_580x.jpg",
+        "isMain": true,
+        "description": "Captain America"
+      }
+    ],
+    "Reviews": ""
+  }
+
+]

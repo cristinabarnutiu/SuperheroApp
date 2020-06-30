@@ -32,6 +32,7 @@ namespace SuperheroApp.Data
         public DbSet<Value> Values { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Superhero> Superheroes { get; set; }
+        public DbSet<Photo> Photos { get; set; }
         public DbSet<UserSuperhero> UserSuperheroes { get; set; }
         public DbSet<Review> Reviews { get; set; }
     }
