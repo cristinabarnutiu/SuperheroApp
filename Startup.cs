@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -29,9 +30,16 @@ namespace SuperheroApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
             
-            services.AddControllersWithViews();
+            
+            services.AddDbContext<DataContext>(x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+
+            //services.AddControllersWithViews();
+            
+            services.AddControllers().AddNewtonsoftJson(opt => 
+            { opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;});
+
+
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -40,8 +48,12 @@ namespace SuperheroApp
             
             //added this
             services.AddCors();
+
+            services.AddAutoMapper(typeof(Repository).Assembly);
             
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            services.AddScoped<IRepository, Repository>();
 
             //we need to specify the authentication scheme here
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
