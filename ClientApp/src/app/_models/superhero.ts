@@ -1,7 +1,14 @@
 import { Photo } from "./photo";
 
+//enum Studio ["Marvel", "DC" ]
+
 export interface Superhero
 {
+
+  //private superhero: Superhero;
+
+  //constructor(){ };
+
   id: number;
   name: string;
   gender: string;
@@ -12,7 +19,14 @@ export interface Superhero
   //reviews?: Review[];
 
   photos?: Photo[];
+
 }
+
+
+
+
+
+
 
 
         //public int Id { get; set; }

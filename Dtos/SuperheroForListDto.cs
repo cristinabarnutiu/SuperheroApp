@@ -15,4 +15,5 @@ namespace SuperheroApp.Dtos
         public Studio Studio { get; set; }
         public string PhotoUrl { get; set; }
     }
+ 
 }

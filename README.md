@@ -9,6 +9,7 @@ SuperheroApp is a single-page application built with:
 - Bootstrap (v4.5) and Font Awesome (v6) for UI layout and styling
 - Bootswatch (4.5) theme 'SpaceLab'
 - SQLite as the database layer
+- Swagger specification
 
 Among the tools used: Visual Studio, DB Browser for SQLite, Postman, JSON Generator, Chrome dev tools
 

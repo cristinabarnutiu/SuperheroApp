@@ -29,6 +29,7 @@ import { SuperheroDetailComponent } from './superheroes/superhero-detail/superhe
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { SuperheroDetailResolver } from './_resolvers/superhero-detail.resolver';
 import { SuperheroListResolver } from './_resolvers/superhero-list.resolver';
+import { UserDetailComponent } from './users/user-detail/user-detail.component';
 
 export function tokenGetter() { return localStorage.getItem('token');}
 
@@ -47,6 +48,7 @@ export function tokenGetter() { return localStorage.getItem('token');}
     SuperheroCardComponent,
     UserCardComponent,
     SuperheroDetailComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

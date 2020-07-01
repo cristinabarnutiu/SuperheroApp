@@ -36,6 +36,7 @@ var superhero_detail_component_1 = require("./superheroes/superhero-detail/super
 var tabs_1 = require("ngx-bootstrap/tabs");
 var superhero_detail_resolver_1 = require("./_resolvers/superhero-detail.resolver");
 var superhero_list_resolver_1 = require("./_resolvers/superhero-list.resolver");
+var user_detail_component_1 = require("./users/user-detail/user-detail.component");
 function tokenGetter() { return localStorage.getItem('token'); }
 exports.tokenGetter = tokenGetter;
 var AppModule = /** @class */ (function () {
@@ -57,6 +58,7 @@ var AppModule = /** @class */ (function () {
                 superhero_card_component_1.SuperheroCardComponent,
                 user_card_component_1.UserCardComponent,
                 superhero_detail_component_1.SuperheroDetailComponent,
+                user_detail_component_1.UserDetailComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
