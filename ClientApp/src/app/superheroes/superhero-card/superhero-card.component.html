@@ -1,0 +1,16 @@
+<!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">-->
+<div class="card mb-5">
+
+
+  <div class="class-img-wrapper">
+    <img class="card-img-top" src="{{superhero.photoUrl}}" alt="{{superhero.name}}">
+  </div>
+
+  <div class="card-body p-1">
+    <h6 class="card-title text-center mb-1">
+      {{ superhero.name | titlecase}}
+    </h6>
+    <p class="card-text text-black-50 text-muted text-center">{{superhero.studio}}</p>
+  </div>
+
+</div>

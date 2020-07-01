@@ -16,10 +16,13 @@ import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
-import { SuperheroListComponent } from './superhero-list/superhero-list.component';
+import { SuperheroListComponent } from './superheroes/superhero-list/superhero-list.component';
 import { ListsComponent } from './lists/lists.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { UserListComponent } from './users/user-list/user-list.component';
+import { SuperheroCardComponent } from './superheroes/superhero-card/superhero-card.component';
+import { UserCardComponent } from './users/user-card/user-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
     SuperheroListComponent,
     ListsComponent,
     ReviewsComponent,
+    UserListComponent,
+    SuperheroCardComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,7 +56,8 @@ import { ReviewsComponent } from './reviews/reviews.component';
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-          { path: 'superhero-list', component: SuperheroListComponent},
+          { path: 'superhero-list', component: SuperheroListComponent },
+          { path: 'user-list', component: UserListComponent },
           { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
       },

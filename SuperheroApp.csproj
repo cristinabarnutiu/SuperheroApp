@@ -59,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\app\routes.ts" />
+    <None Remove="ClientApp\src\app\_models\photo.ts" />
+    <None Remove="ClientApp\src\app\_models\superhero.ts" />
+    <None Remove="ClientApp\src\app\_models\user.ts" />
     <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
     <None Remove="ClientApp\src\typing.d.ts" />
   </ItemGroup>

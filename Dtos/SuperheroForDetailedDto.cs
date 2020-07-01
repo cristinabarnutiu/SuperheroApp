@@ -15,5 +15,6 @@ namespace SuperheroApp.Dtos
         public Studio Studio { get; set; }
         public string PhotoUrl { get; set; }
         public ICollection<PhotosForDetailedDto> Photos { get; set; }
+        public ICollection<ReviewForDetailedDto> Reviews { get; set; }
     }
 }
