@@ -9,20 +9,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SuperheroListComponent = void 0;
 var core_1 = require("@angular/core");
 var SuperheroListComponent = /** @class */ (function () {
-    function SuperheroListComponent(superheroService, alertify) {
+    function SuperheroListComponent(superheroService, alertify, route) {
         this.superheroService = superheroService;
         this.alertify = alertify;
+        this.route = route;
     }
     SuperheroListComponent.prototype.ngOnInit = function () {
-        this.loadSuperheroes();
-    };
-    SuperheroListComponent.prototype.loadSuperheroes = function () {
         var _this = this;
-        this.superheroService.getSuperheroes().subscribe(function (superheroes) {
-            _this.superheroes = superheroes;
-        }, function (error) {
-            _this.alertify.error(error);
-            //this.alertify.error(error.toString());
+        //this.loadSuperheroes();
+        this.route.data.subscribe(function (data) {
+            _this.superheroes = data['superheroes'];
         });
     };
     SuperheroListComponent = __decorate([

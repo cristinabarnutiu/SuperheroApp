@@ -62,11 +62,10 @@
     <None Remove="ClientApp\src\app\_models\photo.ts" />
     <None Remove="ClientApp\src\app\_models\superhero.ts" />
     <None Remove="ClientApp\src\app\_models\user.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\superhero-detail.resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\superhero-list.resolver.ts" />
     <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
     <None Remove="ClientApp\src\typing.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\_services\error.interceptor.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientApp\src\app\_guards\" />

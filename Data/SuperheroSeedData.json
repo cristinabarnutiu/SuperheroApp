@@ -6,7 +6,7 @@
     "Studio": "2",
     "Photos": [
       {
-        "url": "https://m.media-amazon.com/images/I/61nrgQlZyFL._SR500,500_.jpg",
+        "url": "https://i.ebayimg.com/images/g/fKQAAOSw~AFd3qw2/s-l600.jpg",
         "isMain": true,
         "description": "Flash"
       }
@@ -22,9 +22,9 @@
     "Studio": "1",
     "Photos": [
       {
-        "url": "https://img.brickowl.com/files/image_cache/larger/lego-hulk-minifigure-25.jpg",
+        "url": "https://planetx.pk/wp-content/uploads/2017/02/PX-9196.jpg",
         "isMain": true,
-        "description": "Flash"
+        "description": "Hulk"
       }
     ],
     "Reviews": ""
@@ -97,7 +97,7 @@
     "Studio": "1",
     "Photos": [
       {
-        "url": "https://vignette.wikia.nocookie.net/lego/images/0/0b/D-J1h29X4AI1uqV.jpg/revision/latest?cb=20190628142422",
+        "url": ".com/files/image_cache/larger/lego-spider-man-minifigure-540134-25.jpg",
         "isMain": true,
         "description": "Spiderman"
       }
@@ -112,7 +112,7 @@
     "Studio": "1",
     "Photos": [
       {
-        "url": "https://johnlewis.scene7.com/is/image/JohnLewis/238470314alt3?",
+        "url": "https://johnlewis.scene7.com/is/image/JohnLewis/238470314alt3",
         "isMain": true,
         "description": "Ironman"
       }
@@ -127,7 +127,7 @@
     "Studio": "1",
     "Photos": [
       {
-        "url": "https://img.brickowl.com/files/image_cache/larger/lego-black-widow-with-short-hair-minifigure-25.jpg",
+        "url": "https://cdn11.bigcommerce.com/s-0kvv9/images/stencil/1280x1280/products/158997/221950/apinvvmej__06072.1493224069.jpg",
         "isMain": true,
         "description": "Black Widow"
       }
@@ -142,9 +142,39 @@
     "Studio": "1",
     "Photos": [
       {
-        "url": "https://cdn.shopify.com/s/files/1/0079/3336/2256/products/sh177_3d509d2d-f2d7-44f7-ac39-8136daa18a68_580x.jpg",
+        "url": "https://eterniacollectables.co.uk/ekmps/shops/2e9a44/images/lego-marvel-mighty-micros-captain-america-super-hero-long-legs-minifigure-2016-17152-p.png",
         "isMain": true,
         "description": "Captain America"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Aquaman",
+    "Gender": "M",
+    "Superpower": "power of water",
+    "Studio": "2",
+    "Photos": [
+      {
+        "url": "https://cdn.shopify.com/s/files/1/1123/3426/products/Aquaman_DC_Super_Heroes_LEGO_Minifigures_Series_71026_753x.jpg?",
+        "isMain": true,
+        "description": "Aquaman"
+      }
+    ],
+    "Reviews": ""
+  },
+
+  {
+    "Name": "Black Panther",
+    "Gender": "M",
+    "Superpower": "agility",
+    "Studio": "1",
+    "Photos": [
+      {
+        "url": "https://img.brickowl.com/files/image_cache/larger/lego-black-panther-minifigure-25.jpg",
+        "isMain": true,
+        "description": "Black Panther"
       }
     ],
     "Reviews": ""

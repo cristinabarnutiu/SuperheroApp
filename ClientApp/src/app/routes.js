@@ -1,2 +1,2 @@
 //not needed
-//# sourceMappingURL=routes.js.map
+this.sourceMappingURL = routes.js.map;

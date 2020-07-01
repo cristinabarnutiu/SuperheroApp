@@ -9,22 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SuperheroService = void 0;
 var core_1 = require("@angular/core");
 var environment_1 = require("../../environments/environment");
-var http_1 = require("@angular/common/http");
-var httpOptions = {
-    headers: new http_1.HttpHeaders({
-        'Authorization': 'Bearer ' + localStorage.getItem('token')
-    })
-};
+//const httpOptions = { headers: new HttpHeaders({  'Authorization': 'Bearer ' + localStorage.getItem('token') })};
 var SuperheroService = /** @class */ (function () {
     function SuperheroService(http) {
         this.http = http;
         this.baseUrl = environment_1.environment.apiUrl;
     }
     SuperheroService.prototype.getSuperheroes = function () {
-        return this.http.get(this.baseUrl + 'superheroes', httpOptions);
+        return this.http.get(this.baseUrl + 'superheroes');
     };
     SuperheroService.prototype.getSuperhero = function (id) {
-        return this.http.get(this.baseUrl + 'superheroes/' + id, httpOptions);
+        return this.http.get(this.baseUrl + 'superheroes/' + id);
     };
     SuperheroService = __decorate([
         core_1.Injectable({

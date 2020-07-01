@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // RECOMMENDED
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgxGalleryModule } from '@kolkov/ngx-gallery';
 
 
 import { AppComponent } from './app.component';
@@ -23,6 +24,13 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { SuperheroCardComponent } from './superheroes/superhero-card/superhero-card.component';
 import { UserCardComponent } from './users/user-card/user-card.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { SuperheroDetailComponent } from './superheroes/superhero-detail/superhero-detail.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { SuperheroDetailResolver } from './_resolvers/superhero-detail.resolver';
+import { SuperheroListResolver } from './_resolvers/superhero-list.resolver';
+
+export function tokenGetter() { return localStorage.getItem('token');}
 
 @NgModule({
   declarations: [
@@ -38,11 +46,24 @@ import { UserCardComponent } from './users/user-card/user-card.component';
     UserListComponent,
     SuperheroCardComponent,
     UserCardComponent,
+    SuperheroDetailComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        whitelistedDomains: ['localhost:5000'],
+        blacklistedRoutes: ['localhost:5000/api/auth']
+      }
+    }),
+
+    TabsModule.forRoot(),
+
+    NgxGalleryModule,
 
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
@@ -56,7 +77,8 @@ import { UserCardComponent } from './users/user-card/user-card.component';
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-          { path: 'superhero-list', component: SuperheroListComponent },
+          { path: 'superhero-list', component: SuperheroListComponent, resolve: {superheroes: SuperheroListResolver} },
+          { path: 'superhero-list/:id', component: SuperheroDetailComponent, resolve: {superhero: SuperheroDetailResolver} },
           { path: 'user-list', component: UserListComponent },
           { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
@@ -78,6 +100,8 @@ import { UserCardComponent } from './users/user-card/user-card.component';
   providers: [
     AuthService,
     ErrorInterceptorProvider,
+    SuperheroDetailResolver,
+    SuperheroListResolver
   ],
   bootstrap: [AppComponent]
 })
