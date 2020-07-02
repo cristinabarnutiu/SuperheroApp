@@ -17,5 +17,10 @@ namespace SuperheroApp.Data
         Task<bool> SaveAll();
         Task<IEnumerable<Superhero>> GetSuperheroes();
         Task<Superhero> GetSuperhero(int id);
+
+        //user methods
+        Task<User> GetUser(int id);
+        Task<IEnumerable<User>> GetUsers();
+
     }
 }

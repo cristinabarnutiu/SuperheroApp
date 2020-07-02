@@ -30,13 +30,17 @@ var auth_guard_1 = require("./_guards/auth.guard");
 var reviews_component_1 = require("./reviews/reviews.component");
 var user_list_component_1 = require("./users/user-list/user-list.component");
 var superhero_card_component_1 = require("./superheroes/superhero-card/superhero-card.component");
-var user_card_component_1 = require("./users/user-card/user-card.component");
 var angular_jwt_1 = require("@auth0/angular-jwt");
 var superhero_detail_component_1 = require("./superheroes/superhero-detail/superhero-detail.component");
 var tabs_1 = require("ngx-bootstrap/tabs");
 var superhero_detail_resolver_1 = require("./_resolvers/superhero-detail.resolver");
 var superhero_list_resolver_1 = require("./_resolvers/superhero-list.resolver");
 var user_detail_component_1 = require("./users/user-detail/user-detail.component");
+var user_edit_component_1 = require("./users/user-edit/user-edit.component");
+var user_list_resolver_1 = require("./_resolvers/user-list.resolver");
+var user_detail_resolver_1 = require("./_resolvers/user-detail.resolver");
+var user_card_component_1 = require("./users/user-card/user-card.component");
+var user_edit_resolver_1 = require("./_resolvers/user-edit.resolver");
 function tokenGetter() { return localStorage.getItem('token'); }
 exports.tokenGetter = tokenGetter;
 var AppModule = /** @class */ (function () {
@@ -56,9 +60,10 @@ var AppModule = /** @class */ (function () {
                 reviews_component_1.ReviewsComponent,
                 user_list_component_1.UserListComponent,
                 superhero_card_component_1.SuperheroCardComponent,
-                user_card_component_1.UserCardComponent,
                 superhero_detail_component_1.SuperheroDetailComponent,
                 user_detail_component_1.UserDetailComponent,
+                user_edit_component_1.UserEditComponent,
+                user_card_component_1.UserCardComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -85,7 +90,9 @@ var AppModule = /** @class */ (function () {
                         children: [
                             { path: 'superhero-list', component: superhero_list_component_1.SuperheroListComponent, resolve: { superheroes: superhero_list_resolver_1.SuperheroListResolver } },
                             { path: 'superhero-list/:id', component: superhero_detail_component_1.SuperheroDetailComponent, resolve: { superhero: superhero_detail_resolver_1.SuperheroDetailResolver } },
-                            { path: 'user-list', component: user_list_component_1.UserListComponent },
+                            { path: 'user-list', component: user_list_component_1.UserListComponent, resolve: { users: user_list_resolver_1.UserListResolver } },
+                            { path: 'user-list/:id', component: user_detail_component_1.UserDetailComponent, resolve: { user: user_detail_resolver_1.UserDetailResolver } },
+                            { path: 'user/edit', component: user_edit_component_1.UserEditComponent, resolve: { user: user_edit_resolver_1.UserEditResolver } },
                             { path: 'reviews', component: reviews_component_1.ReviewsComponent },
                             { path: 'lists', component: lists_component_1.ListsComponent },
                         ]
@@ -102,7 +109,10 @@ var AppModule = /** @class */ (function () {
                 auth_service_1.AuthService,
                 error_interceptor_1.ErrorInterceptorProvider,
                 superhero_detail_resolver_1.SuperheroDetailResolver,
-                superhero_list_resolver_1.SuperheroListResolver
+                superhero_list_resolver_1.SuperheroListResolver,
+                user_list_resolver_1.UserListResolver,
+                user_detail_resolver_1.UserDetailResolver,
+                user_edit_resolver_1.UserEditResolver,
             ],
             bootstrap: [app_component_1.AppComponent]
         })

@@ -43,5 +43,20 @@ namespace SuperheroApp.Data
             return await _context.SaveChangesAsync() > 0;
 
         }
+
+
+        //user methods
+        public async Task<User> GetUser(int id)
+        {
+            //return first or default superhero that matches the id
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == id);
+            return user;
+        }
+
+        public async Task<IEnumerable<User>> GetUsers()
+        {
+            var users = await _context.Users.ToListAsync();
+            return users;
+        }
     }
 }

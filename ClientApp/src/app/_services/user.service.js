@@ -18,7 +18,7 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getUsers = function () {
         return this.http.get(this.baseUrl + 'users');
     };
-    UserService.prototype.getSuperhero = function (id) {
+    UserService.prototype.getUser = function (id) {
         return this.http.get(this.baseUrl + 'users/' + id);
     };
     UserService = __decorate([

@@ -161,7 +161,7 @@ namespace SuperheroApp
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Web API SuperheroApp V1");
                 //To serve the Swagger UI at the app's root (http://localhost:<port>/), set the RoutePrefix property to an empty string:
-                c.RoutePrefix = string.Empty;
+                //c.RoutePrefix = string.Empty;
             });
 
 

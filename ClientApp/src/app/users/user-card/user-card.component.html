@@ -1,1 +1,42 @@
-<p>user-card works!</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<div class="card mb-4">
+
+
+
+  <div class="card-img-wrapper">
+    <ul class="list-inline text-center">
+
+      <li class="list-inline-item">
+        <button class="btn btn-primary mt-2"
+                [routerLink]="['/user-list/', user.id]">
+
+          <i class="fas fa-smile fa-3x"></i>
+        </button>
+      </li>
+
+      <!--
+  <li class="list-inline-item">
+    <button class="btn btn-primary">
+      <i class="fas fa-heart"></i>
+    </button>
+  </li>
+
+  <li class="list-inline-item">
+    <button class="btn btn-primary">
+      <i class="fas fa-comment"></i>
+    </button>
+  </li>
+      -->
+
+    </ul>  
+
+</div>
+
+
+  <div class="card-body p-1">
+    <h6 class="card-title text-center mb-1">
+      <b> {{user.username | titlecase}}</b>
+    </h6>
+  </div>
+
+</div>

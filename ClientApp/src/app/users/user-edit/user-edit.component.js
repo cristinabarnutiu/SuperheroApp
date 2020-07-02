@@ -6,28 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserListComponent = void 0;
+exports.UserEditComponent = void 0;
 var core_1 = require("@angular/core");
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(userService, alertify, route) {
-        this.userService = userService;
-        this.alertify = alertify;
+var UserEditComponent = /** @class */ (function () {
+    function UserEditComponent(route) {
         this.route = route;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    UserEditComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.data.subscribe(function (data) {
-            _this.users = data['users'];
+            _this.user = data['user'];
         });
     };
-    UserListComponent = __decorate([
+    UserEditComponent = __decorate([
         core_1.Component({
-            selector: 'app-user-list',
-            templateUrl: './user-list.component.html',
-            styleUrls: ['./user-list.component.css']
+            selector: 'app-user-edit',
+            templateUrl: './user-edit.component.html',
+            styleUrls: ['./user-edit.component.css']
         })
-    ], UserListComponent);
-    return UserListComponent;
+    ], UserEditComponent);
+    return UserEditComponent;
 }());
-exports.UserListComponent = UserListComponent;
-//# sourceMappingURL=user-list.component.js.map
+exports.UserEditComponent = UserEditComponent;
+//# sourceMappingURL=user-edit.component.js.map

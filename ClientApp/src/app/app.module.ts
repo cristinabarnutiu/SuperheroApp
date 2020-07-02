@@ -23,13 +23,17 @@ import { AuthGuard } from './_guards/auth.guard';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { SuperheroCardComponent } from './superheroes/superhero-card/superhero-card.component';
-import { UserCardComponent } from './users/user-card/user-card.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { SuperheroDetailComponent } from './superheroes/superhero-detail/superhero-detail.component';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { SuperheroDetailResolver } from './_resolvers/superhero-detail.resolver';
 import { SuperheroListResolver } from './_resolvers/superhero-list.resolver';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { UserListResolver } from './_resolvers/user-list.resolver';
+import { UserDetailResolver } from './_resolvers/user-detail.resolver';
+import { UserCardComponent } from './users/user-card/user-card.component';
+import { UserEditResolver } from './_resolvers/user-edit.resolver';
 
 export function tokenGetter() { return localStorage.getItem('token');}
 
@@ -46,9 +50,10 @@ export function tokenGetter() { return localStorage.getItem('token');}
     ReviewsComponent,
     UserListComponent,
     SuperheroCardComponent,
-    UserCardComponent,
     SuperheroDetailComponent,
     UserDetailComponent,
+    UserEditComponent,
+    UserCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -81,7 +86,9 @@ export function tokenGetter() { return localStorage.getItem('token');}
         children: [
           { path: 'superhero-list', component: SuperheroListComponent, resolve: {superheroes: SuperheroListResolver} },
           { path: 'superhero-list/:id', component: SuperheroDetailComponent, resolve: {superhero: SuperheroDetailResolver} },
-          { path: 'user-list', component: UserListComponent },
+          { path: 'user-list', component: UserListComponent, resolve: { users: UserListResolver }},
+          { path: 'user-list/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } },
+          { path: 'user/edit', component: UserEditComponent, resolve: {user: UserEditResolver} },
           { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
       },
@@ -103,7 +110,10 @@ export function tokenGetter() { return localStorage.getItem('token');}
     AuthService,
     ErrorInterceptorProvider,
     SuperheroDetailResolver,
-    SuperheroListResolver
+    SuperheroListResolver,
+    UserListResolver,
+    UserDetailResolver,
+    UserEditResolver,
   ],
   bootstrap: [AppComponent]
 })

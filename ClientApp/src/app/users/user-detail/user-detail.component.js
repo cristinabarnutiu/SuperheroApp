@@ -6,28 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserListComponent = void 0;
+exports.UserDetailComponent = void 0;
 var core_1 = require("@angular/core");
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(userService, alertify, route) {
-        this.userService = userService;
+var UserDetailComponent = /** @class */ (function () {
+    function UserDetailComponent(superheroService, alertify, route) {
+        this.superheroService = superheroService;
         this.alertify = alertify;
         this.route = route;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    UserDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        //this.loadSuperhero();
         this.route.data.subscribe(function (data) {
-            _this.users = data['users'];
+            _this.user = data['user'];
         });
     };
-    UserListComponent = __decorate([
+    UserDetailComponent = __decorate([
         core_1.Component({
-            selector: 'app-user-list',
-            templateUrl: './user-list.component.html',
-            styleUrls: ['./user-list.component.css']
+            selector: 'app-user-detail',
+            templateUrl: './user-detail.component.html',
         })
-    ], UserListComponent);
-    return UserListComponent;
+    ], UserDetailComponent);
+    return UserDetailComponent;
 }());
-exports.UserListComponent = UserListComponent;
-//# sourceMappingURL=user-list.component.js.map
+exports.UserDetailComponent = UserDetailComponent;
+//# sourceMappingURL=user-detail.component.js.map

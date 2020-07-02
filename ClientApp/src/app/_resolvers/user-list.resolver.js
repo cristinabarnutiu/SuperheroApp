@@ -6,28 +6,28 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserListComponent = void 0;
+exports.UserListResolver = void 0;
 var core_1 = require("@angular/core");
-var UserListComponent = /** @class */ (function () {
-    function UserListComponent(userService, alertify, route) {
+var rxjs_1 = require("rxjs");
+var operators_1 = require("rxjs/operators");
+var UserListResolver = /** @class */ (function () {
+    function UserListResolver(userService, router, alertify) {
         this.userService = userService;
+        this.router = router;
         this.alertify = alertify;
-        this.route = route;
     }
-    UserListComponent.prototype.ngOnInit = function () {
+    UserListResolver.prototype.resolve = function (route) {
         var _this = this;
-        this.route.data.subscribe(function (data) {
-            _this.users = data['users'];
-        });
+        return this.userService.getUsers().pipe(operators_1.catchError(function (error) {
+            _this.alertify.error('Problem retrieving data');
+            _this.router.navigate(['/home']);
+            return rxjs_1.of(null);
+        }));
     };
-    UserListComponent = __decorate([
-        core_1.Component({
-            selector: 'app-user-list',
-            templateUrl: './user-list.component.html',
-            styleUrls: ['./user-list.component.css']
-        })
-    ], UserListComponent);
-    return UserListComponent;
+    UserListResolver = __decorate([
+        core_1.Injectable()
+    ], UserListResolver);
+    return UserListResolver;
 }());
-exports.UserListComponent = UserListComponent;
-//# sourceMappingURL=user-list.component.js.map
+exports.UserListResolver = UserListResolver;
+//# sourceMappingURL=user-list.resolver.js.map

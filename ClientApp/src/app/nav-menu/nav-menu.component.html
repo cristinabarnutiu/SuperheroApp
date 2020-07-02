@@ -50,9 +50,10 @@
         </a>
 
         <div class="dropdown-menu mt-3" aria-labelledby="dropdownMenuLink" *dropdownMenu>
-          <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Edit Profile</a>
+          <a class="dropdown-item" [routerLink]="['/user/edit']">
+          <i class="fas fa-smile"></i> Edit Profile</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</a>
+          <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
         </div>
         
         <a class="btn btn-info text-light ml-2 my-2 my-sm-0" (click)="logout()">Logout</a>

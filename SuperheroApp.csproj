@@ -66,12 +66,26 @@
     <None Remove="ClientApp\src\app\_models\superhero.ts" />
     <None Remove="ClientApp\src\app\_models\user.ts" />
     <None Remove="ClientApp\src\app\_resolvers\superhero-detail.resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\superhero-list - Copy.resolver.ts" />
     <None Remove="ClientApp\src\app\_resolvers\superhero-list.resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\user-detail.resolver.ts" />
+    <None Remove="ClientApp\src\app\_resolvers\user-edit.resolver.ts" />
     <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
     <None Remove="ClientApp\src\typing.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ClientApp\src\app\_guards\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Update="ClientApp\src\app\_resolvers\superhero-list - Copy.resolver.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\_resolvers\user-detail.resolver.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
+    <TypeScriptCompile Update="ClientApp\src\app\_resolvers\user-edit.resolver.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
   </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->

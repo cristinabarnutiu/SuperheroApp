@@ -1,12 +1,16 @@
+<div class="container">
+  <h1>List of Users</h1>
 
-<div class = "container">
-<h1>List of Users</h1>
+  <div class="row">
 
-<div class="row">
-  <div class="col-lg-2 col-md-3 col-sm-6">
+    <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
 
-    <p *ngFor="let user of users"><i class="fas fa-user"></i> {{user.username | titlecase}}</p>
+      <app-user-card [user]="user"></app-user-card>
 
+      <!--<p><i class="fas fa-smile"></i> {{ user.username | titlecase }} </p>-->
+
+
+
+    </div>
   </div>
-</div>
 </div>
