@@ -35,6 +35,7 @@ import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes-guard';
+import { AboutComponent } from './about/about.component';
 
 export function tokenGetter() { return localStorage.getItem('token');}
 
@@ -55,6 +56,7 @@ export function tokenGetter() { return localStorage.getItem('token');}
     UserDetailComponent,
     UserEditComponent,
     UserCardComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -79,6 +81,7 @@ export function tokenGetter() { return localStorage.getItem('token');}
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
+      { path: 'about', component: AboutComponent },
 
       {
         path: '',

@@ -81,6 +81,9 @@ namespace SuperheroApp
             //added this
             services.AddCors();
 
+            //Cloudinary settings
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+
             services.AddAutoMapper(typeof(Repository).Assembly);
             
             services.AddScoped<IAuthRepository, AuthRepository>();

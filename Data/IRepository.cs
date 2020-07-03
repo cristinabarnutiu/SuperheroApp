@@ -21,6 +21,6 @@ namespace SuperheroApp.Data
         //user methods
         Task<User> GetUser(int id);
         Task<IEnumerable<User>> GetUsers();
-
+        Task GetPhoto(int id);
     }
 }

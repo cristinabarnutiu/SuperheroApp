@@ -19,24 +19,29 @@
             [routerLinkActive]="['link-active']"
             [routerLinkActiveOptions]="{ exact: true }">
           <a class="nav-link" [routerLink]="['/']">Home</a>
+
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link" [routerLink]="['/about']">About</a>
+        </li>
+
         <li class="nav-item" [routerLinkActive]="['link-active']">
           <a class="nav-link" [routerLink]="['/lists']">Lists</a>
-
         </li>
+        <!--
+  <li class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+  </li>
+           -->
         <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link" [routerLink]="['/reviews']">Reviews</a>
+          <a class="nav-link" [routerLink]="['/superhero-list']">Superheroes</a>
         </li>
 
-        <li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link" [routerLink]="['/superhero-list']">Superhero List</a>
-        </li>
-
-  <!--This nav-bar menu option is visible only for logged users-->
+        <!--This nav-bar menu option is visible only for logged users-->
         <li *ngIf="loggedIn()" class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link" [routerLink]="['/user-list']">User List</a>
+          <a class="nav-link" [routerLink]="['/user-list']">Users</a>
         </li>
 
-  <!--
+        <!--
   <li class="nav-item" [routerLinkActive]="['link-active']">
     <a class="nav-link" [routerLink]="['/value']">Value</a>
   </li>

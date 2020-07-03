@@ -12,21 +12,21 @@ namespace SuperheroApp.Helpers
     {
         public AutoMapperProfiles()
         {
-            CreateMap<Superhero, SuperheroForListDto>()
+           CreateMap<Superhero, SuperheroForListDto>()
                 .ForMember(dest => dest.PhotoUrl, opt => 
                 opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
 
-            CreateMap<Superhero, SuperheroForDetailedDto>()
+           CreateMap<Superhero, SuperheroForDetailedDto>()
                 .ForMember(dest => dest.PhotoUrl, opt =>
                 opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url));
 
-            CreateMap<Photo, PhotosForDetailedDto>();
+           CreateMap<Photo, PhotosForDetailedDto>();
 
            CreateMap<User, UserForListDto>();
 
            CreateMap<User, UserForDetailedDto>();
 
-            CreateMap<UserForUpdateDto, User>();
+           CreateMap<UserForUpdateDto, User>();
         }
     }
 }

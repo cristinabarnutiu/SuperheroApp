@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SuperheroApp.Data;
 
 namespace SuperheroApp.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200703185649_UpdatedSuperheroes")]
+    partial class UpdatedSuperheroes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,9 +29,6 @@ namespace SuperheroApp.Migrations
 
                     b.Property<bool>("IsMain")
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("PublicId")
-                        .HasColumnType("TEXT");
 
                     b.Property<int>("SuperheroId")
                         .HasColumnType("INTEGER");
