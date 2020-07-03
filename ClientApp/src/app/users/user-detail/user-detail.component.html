@@ -1,19 +1,25 @@
-<h1>{{user.username | titlecase}}</h1>
+<h1>{{user.username | titlecase}}'s Profile</h1>
 
 <div class="container mt-4">
 
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
+        <br>
+        <i class="fas fa-smile fa-3x" align="center"></i>
+        <br>
         <div class="card-body">
           <div>
             <strong>Name:</strong>
-            <p>{{user.name |titlecase}}</p>
+            <p>{{user.name | titlecase}}</p>
+            <strong>Username:</strong>
+            <p>{{user.username | titlecase}}</p>
           </div>
 
-
+          <!--
           <div class="card-footer">
           </div>
+            -->
         </div>
       </div>
     </div>

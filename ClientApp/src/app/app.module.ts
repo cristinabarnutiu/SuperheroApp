@@ -34,6 +34,7 @@ import { UserListResolver } from './_resolvers/user-list.resolver';
 import { UserDetailResolver } from './_resolvers/user-detail.resolver';
 import { UserCardComponent } from './users/user-card/user-card.component';
 import { UserEditResolver } from './_resolvers/user-edit.resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes-guard';
 
 export function tokenGetter() { return localStorage.getItem('token');}
 
@@ -84,11 +85,16 @@ export function tokenGetter() { return localStorage.getItem('token');}
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-          { path: 'superhero-list', component: SuperheroListComponent, resolve: {superheroes: SuperheroListResolver} },
-          { path: 'superhero-list/:id', component: SuperheroDetailComponent, resolve: {superhero: SuperheroDetailResolver} },
-          { path: 'user-list', component: UserListComponent, resolve: { users: UserListResolver }},
+          { path: 'superhero-list', component: SuperheroListComponent, resolve: { superheroes: SuperheroListResolver } },
+          { path: 'superhero-list/:id', component: SuperheroDetailComponent, resolve: { superhero: SuperheroDetailResolver } },
+          { path: 'user-list', component: UserListComponent, resolve: { users: UserListResolver } },
           { path: 'user-list/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } },
-          { path: 'user/edit', component: UserEditComponent, resolve: {user: UserEditResolver} },
+          {
+            path: 'user/edit',
+            component: UserEditComponent,
+            resolve: { user: UserEditResolver },
+            canDeactivate: [PreventUnsavedChanges]
+          },
           { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
       },
@@ -114,6 +120,7 @@ export function tokenGetter() { return localStorage.getItem('token');}
     UserListResolver,
     UserDetailResolver,
     UserEditResolver,
+    PreventUnsavedChanges,
   ],
   bootstrap: [AppComponent]
 })

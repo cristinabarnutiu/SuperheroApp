@@ -1,12 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Update;
 using SuperheroApp.Data;
+using SuperheroApp.Dtos;
+using SuperheroApp.Helpers;
 using SuperheroApp.Models;
 
 namespace SuperheroApp.Controllers
@@ -16,97 +21,95 @@ namespace SuperheroApp.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly DataContext _context;
+        //private readonly DataContext _context;
 
-        public UsersController(DataContext context)
+        private readonly IRepository _repo;
+        private readonly IMapper _mapper;
+
+        public UsersController(IRepository repo, IMapper mapper)
         {
-            _context = context;
+            _repo = repo;
+            _mapper = mapper;
         }
 
         // GET: api/Users
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
+        public async Task<IActionResult> GetUsers()
         {
-            return await _context.Users.ToListAsync();
+            var users = await _repo.GetUsers();
+            var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
+
+            return Ok(usersToReturn);
         }
 
         // GET: api/Users/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUser(int id)
+        public async Task<IActionResult> GetUser(int id)
         {
-            var user = await _context.Users.FindAsync(id);
+            var user = await _repo.GetUser(id);
+            var userToReturn = _mapper.Map<UserForDetailedDto>(user);
 
-            if (user == null)
-            {
-                return NotFound();
-            }
+            if (userToReturn == null) { return NotFound("User not found."); }
 
-            return user;
+            return Ok(userToReturn);
         }
+ 
 
-        // PUT: api/Users/5
+        // PUT: api/User/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdateDto)
         {
-            if (id != user.Id)
-            {
-                return BadRequest();
-            }
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized("Not allowed");
+            var userFromRepo = await _repo.GetUser(id);
 
-            _context.Entry(user).State = EntityState.Modified;
+            //updates user from dto and saves in user from repo
+            _mapper.Map(userForUpdateDto, userFromRepo);
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            if (await _repo.SaveAll())
+                return NoContent();
 
-            return NoContent();
+            throw new Exception($"Failed to update user with id {id}");
         }
 
-        // POST: api/Users
+        // POST: api/Superheroes
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        
+        /*
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User user)
+        public async Task<ActionResult<Superhero>> PostSuperhero(Superhero superhero)
         {
-            _context.Users.Add(user);
+            _context.Superheroes.Add(superhero);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUser", new { id = user.Id }, user);
+            return CreatedAtAction("GetUser", new { id = superhero.Id }, superhero);
         }
 
-        // DELETE: api/Users/5
+        // DELETE: api/Superheroes/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<User>> DeleteUser(int id)
+        public async Task<ActionResult<Superhero>> DeleteSuperhero(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+            var superhero = await _context.Superheroes.FindAsync(id);
+            if (superhero == null)
             {
                 return NotFound();
             }
 
-            _context.Users.Remove(user);
+            _context.Superheroes.Remove(superhero);
             await _context.SaveChangesAsync();
 
-            return user;
+            return superhero;
         }
 
-        private bool UserExists(int id)
+        private bool SuperheroExists(int id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _context.Superheroes.Any(e => e.Id == id);
         }
+        */
+    
     }
+
 }

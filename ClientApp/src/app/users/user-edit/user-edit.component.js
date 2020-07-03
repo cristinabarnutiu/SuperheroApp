@@ -9,15 +9,39 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserEditComponent = void 0;
 var core_1 = require("@angular/core");
 var UserEditComponent = /** @class */ (function () {
-    function UserEditComponent(route) {
+    function UserEditComponent(route, alertify, userService, authService) {
         this.route = route;
+        this.alertify = alertify;
+        this.userService = userService;
+        this.authService = authService;
     }
+    UserEditComponent.prototype.unloadNotification = function ($event) {
+        if (this.editForm.dirty) {
+            $event.returnValue = true;
+        }
+    };
     UserEditComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.data.subscribe(function (data) {
             _this.user = data['user'];
         });
+        //this.displayUsername = this.user.name.toString();
     };
+    UserEditComponent.prototype.updateUser = function () {
+        var _this = this;
+        this.userService.updateUser(this.authService.decodedToken.nameid, this.user)
+            .subscribe(function (next) {
+            _this.alertify.success('Profile updated successfully');
+            //resets the dirty form back to initial state
+            _this.editForm.reset(_this.user);
+        }, function (error) { _this.alertify.error(error); });
+    };
+    __decorate([
+        core_1.ViewChild('editForm', { static: true })
+    ], UserEditComponent.prototype, "editForm", void 0);
+    __decorate([
+        core_1.HostListener('window:beforeunload', ['$event'])
+    ], UserEditComponent.prototype, "unloadNotification", null);
     UserEditComponent = __decorate([
         core_1.Component({
             selector: 'app-user-edit',

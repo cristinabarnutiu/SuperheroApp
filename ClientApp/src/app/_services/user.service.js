@@ -21,6 +21,9 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getUser = function (id) {
         return this.http.get(this.baseUrl + 'users/' + id);
     };
+    UserService.prototype.updateUser = function (id, user) {
+        return this.http.put(this.baseUrl + 'users/' + id, user);
+    };
     UserService = __decorate([
         core_1.Injectable({
             providedIn: 'root'

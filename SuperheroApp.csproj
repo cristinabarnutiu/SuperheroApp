@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="ClientApp\src\app\routes.ts" />
+    <None Remove="ClientApp\src\app\_guards\prevent-unsaved-changes-guard.ts" />
     <None Remove="ClientApp\src\app\_models\photo.ts" />
     <None Remove="ClientApp\src\app\_models\superhero.ts" />
     <None Remove="ClientApp\src\app\_models\user.ts" />
@@ -72,9 +73,6 @@
     <None Remove="ClientApp\src\app\_resolvers\user-edit.resolver.ts" />
     <None Remove="ClientApp\src\app\_services\error.interceptor.ts" />
     <None Remove="ClientApp\src\typing.d.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ClientApp\src\app\_guards\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Update="ClientApp\src\app\_resolvers\superhero-list - Copy.resolver.ts">
