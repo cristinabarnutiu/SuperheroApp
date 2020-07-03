@@ -102,6 +102,7 @@ var AppModule = /** @class */ (function () {
                                 resolve: { user: user_edit_resolver_1.UserEditResolver },
                                 canDeactivate: [prevent_unsaved_changes_guard_1.PreventUnsavedChanges]
                             },
+                            { path: 'about', component: about_component_1.AboutComponent },
                             { path: 'reviews', component: reviews_component_1.ReviewsComponent },
                             { path: 'lists', component: lists_component_1.ListsComponent },
                         ]

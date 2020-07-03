@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Superhero.Dtos
+namespace SuperheroApp.Dtos
 {
     public class PhotoForCreationDto
     {

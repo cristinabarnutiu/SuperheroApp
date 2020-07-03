@@ -98,6 +98,7 @@ export function tokenGetter() { return localStorage.getItem('token');}
             resolve: { user: UserEditResolver },
             canDeactivate: [PreventUnsavedChanges]
           },
+          { path: 'about', component: AboutComponent },
           { path: 'reviews', component: ReviewsComponent },
           { path: 'lists', component: ListsComponent },]
       },
