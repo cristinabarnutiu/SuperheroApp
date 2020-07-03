@@ -42,6 +42,7 @@ var user_detail_resolver_1 = require("./_resolvers/user-detail.resolver");
 var user_card_component_1 = require("./users/user-card/user-card.component");
 var user_edit_resolver_1 = require("./_resolvers/user-edit.resolver");
 var prevent_unsaved_changes_guard_1 = require("./_guards/prevent-unsaved-changes-guard");
+var about_component_1 = require("./about/about.component");
 function tokenGetter() { return localStorage.getItem('token'); }
 exports.tokenGetter = tokenGetter;
 var AppModule = /** @class */ (function () {
@@ -65,6 +66,7 @@ var AppModule = /** @class */ (function () {
                 user_detail_component_1.UserDetailComponent,
                 user_edit_component_1.UserEditComponent,
                 user_card_component_1.UserCardComponent,
+                about_component_1.AboutComponent,
             ],
             imports: [
                 platform_browser_1.BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -99,6 +101,7 @@ var AppModule = /** @class */ (function () {
                                 resolve: { user: user_edit_resolver_1.UserEditResolver },
                                 canDeactivate: [prevent_unsaved_changes_guard_1.PreventUnsavedChanges]
                             },
+                            { path: 'about', component: about_component_1.AboutComponent },
                             { path: 'reviews', component: reviews_component_1.ReviewsComponent },
                             { path: 'lists', component: lists_component_1.ListsComponent },
                         ]
